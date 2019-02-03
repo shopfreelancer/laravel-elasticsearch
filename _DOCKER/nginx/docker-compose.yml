@@ -4,7 +4,7 @@ services:
     php-es:
         build: .
         volumes:
-            - ../../www:/var/www
+            - ../../www:/www
     nginx-es:
         image: nginx:alpine
         ports:
@@ -13,7 +13,7 @@ services:
             - ../../www:/www
             - ./site.conf:/etc/nginx/conf.d/default.conf 
     es:
-        image: docker.elastic.co/elasticsearch/elasticsearch:6.2.3
+        image: elasticsearch:5.6.14-alpine
         ports:
             - 9200:9200
         volumes:
@@ -21,6 +21,7 @@ services:
     mysql-es:
         restart: always
         image: mysql:5.7
+        user: mysql
         ports:
             - 3306:3306
         environment:

@@ -11,14 +11,29 @@
 |
 */
 
-/*
+use App\Articles\ArticlesRepository;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
-*/
 
-Route::get('/', function () {
+Route::get('/ss', function () {
+    return view('welcome');
+});
+
+
+// no elasticsearch, just show the Collection
+Route::get('/articles', function () {
     return view('articles.index', [
-        'articles' => AppArticle::all(),
+        'articles' => App\Article::all(),
+    ]);
+});
+
+Route::get('/search', function (ArticlesRepository $repository) {
+    $articles = $repository->search((string) request('q'));
+
+    return view('articles.index', [
+        'articles' => $articles,
     ]);
 });
