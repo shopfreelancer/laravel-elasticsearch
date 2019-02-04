@@ -2,3 +2,4 @@
 _DOCKER/mysqldata/*
 .DS_Store
 ._.DS_Store
+/html

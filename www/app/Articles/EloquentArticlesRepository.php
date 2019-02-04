@@ -8,8 +8,8 @@ class EloquentArticlesRepository implements ArticlesRepository {
 
     public function search(string $query = ""): Collection
     {
-        return Article::where('body', 'like', "%{query}%")
-            ->orWhere('title', 'like',  "%{query}%")
+        return Article::where('body', 'like', "%$query%")
+            ->orWhere('title', 'like',  "%$query%")
             ->get();
     }
 }
