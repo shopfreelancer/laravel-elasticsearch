@@ -14,15 +14,6 @@
 use App\Articles\ArticlesRepository;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/ss', function () {
-    return view('welcome');
-});
-
-
 // no elasticsearch, just show the Collection
 Route::get('/articles', function () {
     return view('articles.index', [
