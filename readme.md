@@ -23,7 +23,8 @@ mv .env.example .env
 
 Run on migrations on server and seed testing data
 ```
-cd www 
+docker exec -it nginx_php-es_1 bash
 php artisan migrate
-php artisan db:seed 
+php artisan db:seed
+php artisan search:reindex 
 ```

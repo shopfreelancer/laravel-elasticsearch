@@ -3,7 +3,7 @@
 namespace App\Articles;
 
 use App\Article;
-use ElasticsearchClient;
+use Elasticsearch\Client;
 use Illuminate\Database\Eloquent\Collection;
 
 class ElasticsearchArticlesRepository implements ArticlesRepository

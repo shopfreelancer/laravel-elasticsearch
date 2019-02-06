@@ -5,6 +5,9 @@ namespace App\Providers;
 use App\Articles\ArticlesRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Articles\EloquentArticlesRepository;
+use App\Articles\ElasticsearchArticlesRepository;
+use Elasticsearch\ClientBuilder;
+use Elasticsearch\Client;
 
 class AppServiceProvider extends ServiceProvider
 {

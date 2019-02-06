@@ -2,7 +2,7 @@
 
 namespace App\Search;
 
-use ElasticsearchClient;
+use Elasticsearch\Client;
 
 class ElasticsearchObserver
 {
