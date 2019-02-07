@@ -28,3 +28,17 @@ Route::get('/search', function (ArticlesRepository $repository) {
         'articles' => $articles,
     ]);
 });
+
+
+Route::get('/article/insert', function() {
+    $params = [
+        'title' => "my title",
+        'body' => "description goes here",
+        'tags' => ['php']
+    ];
+    $article = new App\Article($params);
+    $article->save();
+
+
+    return response()->json("Article inserted");
+});

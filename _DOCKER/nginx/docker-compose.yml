@@ -33,3 +33,10 @@ services:
             MYSQL_PASSWORD: elastic
         volumes:
             - ../mysqldata:/var/lib/mysql
+    kibana:
+        image: docker.elastic.co/kibana/kibana:6.2.4
+        environment:
+            ELASTICSEARCH_URL: http://es:9200
+        ports:
+             - 5601:5601
+
